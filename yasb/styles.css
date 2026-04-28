@@ -1,98 +1,22 @@
 :root {
-    /* =====GREEN=====  */
 
-    --base:        #232e1e;
-    --mantle:      #0c1509; 
-    --crust:       #0b1509; 
-    --text:        #c2c4c1;
-    --subtext0:    #c2c4c1;
-    --subtext1:    #c2c4c1;
-    --surface0:    #25301e; 
-    --surface1:    #38422c; 
-    --surface2:    #32422c;
-    --teal:        #9cc996;
-    --blue:        #9cc996;
-    --red:         #9cc996;
-    --green:       #9cc996;
-    --yellow:      #9cc996;
-    --pink:        #9cc996;
-    --sky:         #9cc996;
-
-    /* =====YELLOW=====  */
-
-     /* --base: #2e2c1e;
-    --mantle:      #151409; 
-    --crust:       #151509; 
-    --text:        #c4c4c1;
-    --subtext0:    #c4c4c1;
-    --subtext1:    #c4c4c1;
-    --surface0:    #302d1e; 
-    --surface1:    #423e2c; 
-    --surface2:    #423f2c;
-    --teal:        #c9c496;
-    --blue:        #c9c496;
-    --red:         #c9c496;
-    --green:       #c9c496;
-    --yellow:      #c9c496;
-    --pink:        #c9c496;
-    --sky:         #c9c496; */
-
-    /* =====PINK=====  */
-
-    /* --base: #2e1e23;
-    --mantle:      #15090d; 
-    --crust:       #15090e; 
-    --text:        #c4c1c2;
-    --subtext0:    #c4c1c2;
-    --subtext1:    #c4c1c2;
-    --surface0:    #301e24; 
-    --surface1:    #422c35; 
-    --surface2:    #422c34;
-    --teal:        #c996a7;
-    --blue:        #c996a7;
-    --red:         #c996a7;
-    --green:       #c996a7;
-    --yellow:      #c996a7;
-    --pink:        #c996a7;
-    --sky:         #c996a7; */
-
-    /* =====PURPLE=====  */
-
-    /* --base: #232e1e;
-    --mantle:      #0c1509; 
-    --crust:       #0b1509; 
-    --text:        #c2c4c1;
-    --subtext0:    #c2c4c1;
-    --subtext1:    #c2c4c1;
-    --surface0:    #25301e; 
-    --surface1:    #38422c; 
-    --surface2:    #32422c;
-    --teal:        #9cc996;
-    --blue:        #9cc996;
-    --red:         #9cc996;
-    --green:       #9cc996;
-    --yellow:      #9cc996;
-    --pink:        #9cc996;
-    --sky:         #9cc996; */
-
-    /* =====CYAN=====  */
-
-    /* --base: #1e2e27;
-    --mantle:      #091510; 
-    --crust:       #091511; 
-    --text:        #c1c4c2;
-    --subtext0:    #c1c4c3;
-    --subtext1:    #c1c4c3;
-    --surface0:    #1e302a; 
-    --surface1:    #2c423b; 
-    --surface2:    #2c423b;
-    --teal:        #96c9ad;
-    --blue:        #96c9ad;
-    --red:         #96c9ad;
-    --green:       #96c9ad;
-    --yellow:      #96c9ad;
-    --pink:        #96c9ad;
-    --sky:         #96c9ad; */
+    --base:        #251807;
+    --mantle:      #080501; 
+    --crust:       #080501; 
+    --text:        #F1DBBE;
+    --subtext0:    #F1DBBE;
+    --subtext1:    #F1DBBE;
+    --surface0:    #A56B22; 
+    --surface1:    #A56B22; 
+    --surface2:    #A56B22;
+    --teal:        #D5963E;
+    --blue:        #D5963E;
+    --red:         #D5963E;
+    --green:       #D5963E;
+    --yellow:      #D5963E;
+    --pink:        #D5963E;
+    --sky:         #D5963E;
+    
 }
 
 * {
@@ -106,6 +30,7 @@
     padding: 0;
     margin: 0;
     background-color: var(--crust);
+    border-radius: 8px;
 }
 
 .widget {
@@ -133,7 +58,7 @@
     font-weight: 600;
     padding: 2px 0 0 0;
     /* CHANGED: Make layout label pop */
-    color: var(--teal);
+    color: var(--pink);
 }
 
 /* WIDGET CONTAINERS - These get colors from your script now */
@@ -145,14 +70,14 @@
     margin-bottom: 4px;
 }
 .komorebi-workspaces .offline-status {
-    color: #7b9962;
+    color: var(--blue);
     font-size: 12px;
     padding: 0 4px;
     font-weight: 600;
 }
 .komorebi-workspaces .ws-btn {
     border: none;
-    background-color:#535a45;
+    background-color: var(--base);
     margin: 0px 4px; 
     padding: 0;
     color: rgba(0, 0, 0, 0);
@@ -161,11 +86,11 @@
     width: 10px;
 }
 .komorebi-workspaces .ws-btn.populated {
-    background-color: #7c866c;
+    background-color: var(--surface0);
 }
 .komorebi-workspaces .ws-btn.active {
     color: rgba(149, 177, 255, 0);
-    background-color: #9cc996;
+    background-color: var(--pink);
     height: 12px;
     border-radius: 4px;
 }
@@ -206,16 +131,13 @@
     border-radius: 8px;
     background-color: var(--mantle);
     color: var(--text);
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    margin: 0px;
+    border: 2px solid var(--red);
+    margin: 2px;
 }
 
 .power-menu-popup .button.hover {
-    background-color: var(--surface0);
-    border-color: var(--surface0);
+    background-color: var(--red);
+    border-color: var(--red);
 }
 
 .power-menu-popup .button .label {
@@ -225,8 +147,15 @@
     color: var(--text);
 }
 
+.power-menu-popup .button.hover .label{
+    color: var(--base);
+}
+.power-menu-popup .button.hover .icon{
+    color: var(--base);
+}
+
 .power-menu-popup .button .icon {
-    font-size: 64px;
+    font-size: 32px;
     padding-top: 32px;
     color: var(--subtext1);
 }
@@ -237,8 +166,12 @@
 }
 
 .power-menu-popup .button.cancel .label {
-    color: var(--red);
+    color: var(--surface1);
     margin: 0;
+}
+
+.power-menu-popup .button.cancel.hover .label{
+    color: var(--crust);
 }
 
 .power-menu-popup .button.cancel {
@@ -618,11 +551,13 @@
 
 .wallpapers-widget {
     padding: 0 6px 0 6px;
+    
 }
 
 .wallpapers-gallery-window {
-    background-color: var(--base);
-    border: 0;
+    background-color: var(--crust);
+    border: 4px solid var(--blue);
+    border-radius: 5px;
     margin: 0;
 }
 
@@ -631,7 +566,6 @@
     color: var(--text);
     border: none;
     font-size: 14px;
-    padding: 8px 0;
     border-radius: 8px;
     margin: 0 8px 8px 8px;
     width: 600px;
@@ -698,7 +632,9 @@
     font-size: 14px;
 }
 
-
+.home-widget{
+    margin-right: -10px;
+}
 .home-widget .icon {
     color: var(--teal) !important;
 }
@@ -737,8 +673,11 @@
     padding: 0;
     padding-left: 2px;
     margin: 0;
-    border-radius: 50px;
+    border-radius: 2px;
+    margin-top: 6px;
+    margin-bottom: 6px;
     margin-right: 8px;
+    background-color: var(--base);
 }
 
 .media-widget .label {
@@ -750,6 +689,7 @@
     color: var(--subtext0);
     padding: 0 3px;
     margin: 4px 0;
+    border-radius: 10px;
     font-family: Segoe Fluent Icons;
 }
 
@@ -758,11 +698,10 @@
 }
 
 .media-widget .btn.play {
-    background-color: var(--surface1);
-    border-radius: 14px;
+    color: var(--blue);
+    border-radius: 4px;
     font-size: 16px;
 }
-
 .media-widget .btn.disabled:hover,
 .media-widget .btn.disabled {
     color: var(--surface1);
@@ -771,46 +710,25 @@
 }
 
 .media-menu {
-    min-width: 340px;
+    width: 380px;
+    height: 212;
     background-color: var(--mantle);
-    border: 1px solid var(--surface0);
+    border: 2px solid var(--pink);
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
 }
-
 .media-menu .title {
     color: var(--text);
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 900;
     margin-bottom: 4px;
 }
 
 .media-menu .artist {
     color: var(--subtext0);
-    font-size: 15px;
-    margin-bottom: 16px;
+    font-size: 12px;
+    margin-left: 10px;
 }
-
-.media-menu .source {
-    font-size: 11px;
-    font-weight: 700;
-    border-radius: 12px;
-    padding: 4px 10px;
-    margin-bottom: 16px;
-    color: var(--crust);
-    background-color: var(--overlay1);
-}
-
-.media-menu .source.brave {
-    background-color: var(--peach);
-    color: var(--base);
-}
-
-.media-menu .source.spotify {
-    background-color: var(--green);
-    color: var(--base);
-}
-
 .media-menu .btn {
     font-family: "Segoe Fluent Icons";
     font-size: 18px;
@@ -820,6 +738,7 @@
     min-height: 44px;
     max-height: 44px;
     margin: 0 8px;
+    border-radius: 8px;
     color: var(--text);
     background-color: var(--surface0);
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -828,7 +747,6 @@
 .media-menu .btn:hover {
     background-color: var(--surface1);
     transform: scale(1.1);
-    border-radius: 50%;
 }
 
 .media-menu .btn.play {
@@ -839,7 +757,7 @@
     font-size: 28px;
     color: var(--base);
     background-color: var(--blue);
-    border-radius: 50%;
+    border-radius: 8px;
 }
 
 .media-menu .btn.play:hover {
@@ -862,27 +780,26 @@
 }
 
 .media-menu .progress-slider {
-    margin: 16px 4px;
-    height: 24px;
+    height: 10px;
 }
 
 .media-menu .progress-slider::groove {
-    background: var(--surface1);
-    height: 6px;
-    border-radius: 3px;
+    background: var(--base);
+    height: 4px;
+    border-radius: 1px;
 }
 
 .media-menu .progress-slider::sub-page {
     background: var(--blue);
-    border-radius: 3px;
+    border-radius: 1px;
 }
 
 .media-menu .progress-slider::handle {
     background: var(--text);
     border: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 8px;
+    width: 5px;
+    height: 10px;
+    border-radius: 1px;
     margin: -5px 0;
     transition: transform 0.2s ease;
     opacity: 0;
@@ -899,6 +816,8 @@
 /* CALENDAR */
 .calendar {
     background-color: var(--crust);
+    border: 2px solid var(--blue);
+    border-radius: 6px;
 }
 
 .calendar .calendar-table,
@@ -961,109 +880,8 @@
 .active-window-widget .widget-container .label {
     color: var(--sky);
 }
-.windows-desktops {
-    padding: 0 4px 0 14px;
-}
-.windows-desktops .widget-container {
-    background-color: #1b1113;
-    margin: 4px 0 4px 0;
-    border-radius: 12px;
-}
-.windows-desktops .ws-btn {
-    color: #9c7f8b;
-    border: none;
-    font-size: 14px;
-    margin: 0 3px;
-    padding: 0 
-}
-.windows-desktops .ws-btn.active {
-    color: #fa89b8;
-} 
-
-.windows-desktops .context-menu {
-    background-color:rgba(27, 17, 19, 0.75);
-    border: none;
-    border-radius: 2px;
-    padding: 8px 0;
-}
-.windows-desktops .context-menu .menu-item {
-    padding: 6px 16px;
-}
-.windows-desktops .context-menu .menu-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
-}
-.windows-desktops .context-menu .separator {
-    margin: 2px 0px 2px 0px;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.windows-desktops .rename-dialog {
-    background-color: rgba(27, 17, 20, 0.75);   
-}
-.windows-desktops .rename-dialog QPushButton{
-    background-color:rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    border: none;
-    padding: 4px 12px;
-    border-radius: 4px;
-}
-.windows-desktops .rename-dialog QPushButton:hover{
-    background-color: #585858;
-    color: #ffffff;
-    border: none;
-    padding: 4px 12px;
-    border-radius: 4px;
-}
- 
-.windows-desktops .rename-dialog QLabel {
-    color: #ffffff;
-}
-.windows-desktops .rename-dialog QLineEdit {
-    background-color: transparent;
-    border: 1px solid #fa89b4;
-    padding: 4px;
-    color: #ffffff;
-}
-
-.glazewm-workspaces {
-    margin: 0;
-}
-
-.glazewm-workspaces .ws-btn {
-    font-size: 14px;
-    background-color: transparent;
-    border: none;
-    padding: 0px 4px 0px 4px;
-    margin: 0 2px 0 2px;
-    color: #CDD6F4;
-}
-
-.glazewm-workspaces .ws-btn.active_populated {
-    color: #C2DAF7;
-    background-color: #727272;
-}
-.glazewm-workspaces .ws-btn.active_empty {
-    color: #7D8B9D;
-    background-color: #727272;
-}
-
-.glazewm-workspaces .ws-btn.populated {
-    color: #f7c2d2;
-}
-
-.glazewm-workspaces .ws-btn.empty {
-    color: #9d7d87;
-}
-
-.glazewm-workspaces .ws-btn:hover,
-.glazewm-workspaces .ws-btn.populated:hover,
-.glazewm-workspaces .ws-btn.empty:hover {
-    background-color: #727272;
-}
 .volume-widget .icon {
-	color: #ff74ae;;
+	color: var(--teal);
 	margin:0 2px 0 0;
 }
 .audio-menu {
@@ -1084,11 +902,11 @@
     border-radius: 4px;
 }
 .audio-menu .audio-container .device.selected {
-    background-color: rgba(255, 47, 99, 0.085);
+    background-color: var(--base);
    
 }
 .audio-menu .audio-container .device:hover {
-    background-color: rgba(255, 47, 82, 0.06);
+    background-color: var(--base);
 }
 /* Toggle button for application volumes (if is enabled) */
 .audio-menu .toggle-apps {
@@ -1101,10 +919,10 @@
     border-radius: 4px;
 }
 .audio-menu .toggle-apps.expanded {
-    background-color: rgba(255, 58, 124, 0.1);
+    background-color: var(--blue);
 }
 .audio-menu .toggle-apps:hover {
-    background-color: rgba(255, 69, 125, 0.15);
+    background-color: var(--blue);
     
 }
 /* Container for application volumes (if is enabled) */
@@ -1112,7 +930,7 @@
     padding: 8px;
     margin-top:20px;
     border-radius: 8px;
-    background-color:rgba(255, 70, 110, 0.062)
+    background-color: var(--blue)
 }
 .audio-menu .apps-container .app-volume .app-icon-container {
     min-width: 40px;
@@ -1123,5 +941,151 @@
     margin-right: 8px;
 }
 .audio-menu .apps-container .app-volume .app-icon-container:hover {
-    background-color: rgba(255, 87, 123, 0.1);
+    background-color: var(--blue);
+}
+
+.language-widget {
+    margin-left: -6px;
+    margin-right: -6px;
+}
+
+.language-menu {
+    background-color: var(--crust);
+    min-width: 300px;
+    border: 2px solid var(--blue);
+}
+.language-menu .header {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: var(--crust);
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+}
+.language-menu .footer {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: var(--blue);
+    background-color: var(--crust);
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+}
+.language-menu .footer:hover {
+    background-color: var(--base);
+}
+.language-menu .language-item {
+    padding: 6px 12px;
+    margin: 2px 4px;
+}
+.language-menu .language-item.active {
+    background-color:var(--surface0);
+    border-radius: 4px;
+}
+.language-menu .language-item:hover {
+    background-color: var(--base);
+}
+.language-menu .language-item.active:hover {
+    background-color:var(--pink);
+    border-radius: 4px;
+}
+.language-menu .language-item .code {
+    font-weight: 900;
+    font-size: 14px;
+    min-width: 40px;
+    text-transform: uppercase;
+}
+.language-menu .language-item .icon {
+    font-size: 16px;
+    margin-right: 8px;
+    color: var(--subtext1);
+}
+.language-menu .language-item .name {
+    font-weight: 600;
+    font-size: 14px;
+}
+.language-menu .language-item .layout {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.systray {
+    background: transparent;
+    border: none;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.systray .unpinned-container {
+    background: transparent;
+}
+.systray .pinned-container {
+    background: transparent;
+}
+.systray .button {
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.systray .button:hover {
+    background: var(--base);
+}
+.systray .button.drag-over {
+     background: var(--surface2);
+}
+
+.systray .pinned-container.drop-target {
+    background: var(--base);
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+    border: none;
+    outline: none;
+}
+
+.systray .unpinned-visibility-btn:checked {
+    background: transparent;
+}
+
+.systray .unpinned-visibility-btn:hover {
+    background: var(--base);
+}
+
+/* Popup styles (when show_in_popup is true) */
+ 
+/* The icon the drag is hovering over (drop target icon) */
+.systray-popup .button.drag-over {
+    background-color: var(--crust);
+}
+
+.systray .pinned-container.pinned-container.drop-target {
+    background-color: var(--crust);
+}
+.systray-popup {
+    background-color: var(--crust);
+    border: 2px solid var(--blue);
+    padding: 4px;
+    border-radius: 4px;
+}
+.systray-popup .button {
+    padding: 6px;
+    margin: 0;
+    border: 0;
+    border-radius: 6px;
+}
+.systray-popup .button:hover {
+    background-color: var(--base);
+}
+.brightness-widget {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.brightness-menu {
+    background-color: var(--crust); 
+}
+.brightness-slider {
+    border: none;
 }
