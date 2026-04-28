@@ -37,7 +37,7 @@ bars:
     padding:
       top: 2
       left: 4
-      bottom: 2
+      bottom: 0
       right: 4
     widgets:
       left:
@@ -45,29 +45,58 @@ bars:
       - "komorebi_workspaces"
       - "active_window"
       center:
+      - "volume"
       - "clock"
-      - "apps"
+      - "weather"
       right:
       - "cava"
       - "media"
       - "wallpapers"
-      - "weather"
-      - "bin"
-      - "volume"
+      - "bin"      
+      - "systray"
+      - "brightness"
+      - "language"
       - "power_menu"
 widgets:
   home:
     type: "yasb.home.HomeWidget"
     options:
-      label: "\udb81\udf18"
+      label: "⾕"
       menu_list:
-      - { title: "Phloam", path: "~" }
-      - { title: "Download", path: "~\\Downloads" }
-      - { title: "Documents", path: "~\\Documents" }
-      - { title: "Pictures", path: "~\\Pictures" }
+      - { title: "User Home", path: "~" }
+      - { title: "Download", path: "D:\\Downloads" }
+      - { title: "Documents", path: "C:\\Users\\amn\\Documents" }
+      - { title: "Pictures", path: "C:\\Users\\amn\\Pictures" }
+      - { title: "Sound Settings", command: "cmd.exe /c start ms-settings:sound" }
+      - { title: "Windows Settings", uri: "ms-settings:" }
+      - { separator: true }
+      - { title: "PowerShell", command: "powershell.exe", show_window: true }
+      - { title: "Winget Update", command: "powershell.exe", args: ["-NoProfile", "-NoExit", "-Command", "winget upgrade"], show_window: true }
       system_menu: true
       power_menu: true
-      blur: false
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "System"
+      offset_top: 6
+      offset_left: 0
+      alignment: "left"
+      direction: "down"
+      menu_labels:
+        shutdown: "Shutdown"
+        restart: "Restart"
+        hibernate: "Hibernate"
+        logout: "Logout"
+        lock: "Lock"
+        sleep: "Sleep"
+        system: "System Settings"
+        about: "About This PC"
+        task_manager: "Task Manager"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -95,15 +124,15 @@ widgets:
         round_corners: true
         alignment: "right"
         direction: "down"
-        offset_top: 6
+        offset_top: 0
         offset_left: 0
         thumbnail_corner_radius: 4
-        thumbnail_size: 100
+        thumbnail_size: 150
         max_title_size: 80
         max_artist_size: 20
-        show_source: true
+        show_source: false
       label_shadow:
-        enabled: true
+        enabled: false
         color: "#000000"
         radius: 2
         offset: [ 1, 1 ]
@@ -120,12 +149,12 @@ widgets:
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
-      label: "{win[title]}"
+      label: "{win[process][name]}"
       label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
       label_no_window: ""
       label_icon: true
       label_icon_size: 14
-      max_length: 30
+      max_length: 15
       max_length_ellipsis: "..."
       monitor_exclusive: true
   clock:
@@ -217,20 +246,29 @@ widgets:
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
+      keybindings:
+        - keys: "win+alt+v"
+          action: "toggle_power_menu"
       label: "\uf011"
       uptime: true
-      show_user: true
-      blur: false
+      show_user: false
+      blur: true
       blur_background: true
       animation_duration: 120 # Milliseconds
       button_row: 5 # Number of buttons in a row, min 1 max 6
+      profile_image_size: 80 # Avatar size in pixels
       buttons:
-        restart: ["\uead2              ", "Restart"]
-        shutdown: ["  \uf011", "Shut Down"]
-        signout: ["  \udb80\udf43 ", "Sign out"]
-        hibernate: ["\uf28e   ", "Hibernate"]
+        restart: ["\uead2 ", "Restart"]
+        shutdown: ["\uf011", "Shut Down"]
+        signout: ["\udb80\udf43", "Sign out"]
+        hibernate: ["\uf28e  ", "Hibernate"]
         lock: ["\uea75   ", "Lock"]
-        cancel: ["Cancel"]
+        cancel: ["", "Cancel"]
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -277,6 +315,9 @@ widgets:
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
+      keybindings:
+        - keys: "win+alt+c"
+          action: "toggle_gallery"
       label: "\udb83\ude09"
       # Example path to folder with images. Can be a single string or a list of strings.
       # image_path: "C:\\Users\\{Username}\\Images" 
@@ -287,15 +328,15 @@ widgets:
       gallery:
           enabled: true
           blur: true
-          image_width: 220
-          image_per_page: 6
+          image_width: 440
+          image_per_page: 4
           gallery_columns: 0 # 0 = auto, matches image_per_page for a single row
           horizontal_position: "center" # left/center/right placement on screen
           vertical_position: "center" # top/center/bottom placement
           position_offset: 0 # minimum gap (px) from screen edges - see below for advanced options
           respect_work_area: true # clamp to OS work area (avoids Windows taskbar)
           show_buttons: false
-          orientation: "portrait"
+          orientation: "landscape"
           image_spacing: 8
           lazy_load: true
           lazy_load_fadein: 400
@@ -404,35 +445,24 @@ widgets:
       bar_height: 12
       min_bar_height: 0
       gradient: 1
-      foreground: "#9cc996"
-      gradient_color_1: '#9cc996'
-      gradient_color_2: '#9cc996'
-      gradient_color_3: '#9cc996'
+      foreground: "#D5963E"
+      gradient_color_1: '#D5963E'
+      gradient_color_2: '#D5963E'
+      gradient_color_3: '#D5963E'
       bars_number: 8
       bar_spacing: 2
       bar_width: 4
       bar_type: "bars"
       framerate: 60
       hide_empty: true
-  apps:
-    type: "yasb.applications.ApplicationsWidget"
-    options:
-      label: "{data}"
-      app_list:
-        - { icon: "\uf0a2", launch: "notification_center" }
-        - { icon: "\uf422", launch: "launcher" }
-        - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
-        - { icon: "\uf489", launch: "wt" }
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
   bin:
     type: "yasb.recycle_bin.RecycleBinWidget"
     options:
-      label: "{icon} {items_size}"
-      label_alt: "Items {items_count}, Total size ({items_size})"
+      keybindings:
+        - keys: "win+alt+x"
+          action: "empty_bin"
+      label: "{icon}"
+      label_alt: "{icon} {items_size}"
       icons:
         bin_empty: "\udb82\ude7a"
         bin_filled: "\udb82\ude79"
@@ -458,7 +488,7 @@ widgets:
         - "\uf027"  # Icon for 31-60% volume
         - "\uf028"  # Icon for 61-100% volume
       audio_menu:
-        blur: true
+        blur: false
         round_corners: true
         round_corners_type: "normal"
         border_color: "system"
@@ -488,3 +518,78 @@ widgets:
     app_icons: # Icons for the toggle button to expand/collapse application volumes
       toggle_down: "\uf078" # Icon for btn collapsed state
       toggle_up: "\uf077" # Icon for btn expanded state
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "{lang[language_code]}"
+      label_alt: "{lang[full_name]}"
+      update_interval: 1
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      language_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icon: true
+        layout_icon: "\uf11c"
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "˅"
+      label_expanded: "˃"
+      label_position: "right"
+      icon_size: 12
+      pin_click_modifier: "alt"
+      show_in_popup: true
+      icons_per_row: 4
+      popup:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: None
+        alignment: "center"
+        direction: "down"
+        offset_top: 4
+        offset_left: 0
+  brightness:
+    type: "yasb.brightness.BrightnessWidget"
+    options:
+      label: "{icon}"
+      label_alt: "Brightness {percent}%"
+      tooltip: true
+      hide_unsupported: true
+      brightness_toggle_level: [0, 50, 100]
+      auto_light: false
+      auto_light_icon: "\udb80\udce1"
+      auto_light_night_level: 35
+      auto_light_night_start_time: "19:00"
+      auto_light_night_end_time: "06:45"
+      auto_light_day_level: 75
+      brightness_icons: [
+        "\udb80\udcde",  # Icon for 0-25% brightness
+        "\udb80\udcdd",  # Icon for 26-50% brightness
+        "\udb80\udcdf",  # Icon for 51-75% brightness
+        "\udb80\udce0"   # Icon for 76-100% brightness
+      ]
+      brightness_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+          on_left: "toggle_label"
+      label_shadow:
+        enabled: false
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
