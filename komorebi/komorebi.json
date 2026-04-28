@@ -11,11 +11,11 @@
   "border_width": 3,
   "border_offset": 0,
   "border_colours": {
-    "single": "#9cc996",
-    "stack": "#9cc996",
-    "floating": "#9cc996",
-    "monocle": "#9cc996",
-    "unfocused": "#0b1509"
+    "single": "#d5963e",
+    "stack": "#d5963e",
+    "floating": "#d5963e",
+    "monocle": "#d5963e",
+    "unfocused": "#080501"
   },
   "mouse_follows_focus": true,
   "transparency": true,
@@ -43,31 +43,23 @@
       "workspaces": [
         {
           "name": "I",
-          "layout": "BSP"
+          "layout": "RightMainVerticalStack"
         },
         {
           "name": "II",
-          "layout": "BSP"
+          "layout": "RightMainVerticalStack"
         },
         {
           "name": "III",
-          "layout": "BSP"
+          "layout": "RightMainVerticalStack"
         },
         {
           "name": "IV",
-          "layout": "BSP"
+          "layout": "RightMainVerticalStack"
         },
         {
           "name": "V",
-          "layout": "BSP"
-        },
-        {
-          "name": "VI",
-          "layout": "BSP"
-        },
-        {
-          "name": "VII",
-          "layout": "BSP"
+          "layout": "RightMainVerticalStack"
         }
       ]
     }
