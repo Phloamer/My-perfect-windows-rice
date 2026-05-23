@@ -11,11 +11,11 @@
   "border_width": 3,
   "border_offset": 0,
   "border_colours": {
-    "single": "#d5963e",
-    "stack": "#d5963e",
-    "floating": "#d5963e",
-    "monocle": "#d5963e",
-    "unfocused": "#080501"
+    "single": "#9BDAC2",
+    "stack": "#9BDAC2",
+    "floating": "#9BDAC2",
+    "monocle": "#9BDAC2",
+    "unfocused": "#1b4a38"
   },
   "mouse_follows_focus": true,
   "transparency": true,
