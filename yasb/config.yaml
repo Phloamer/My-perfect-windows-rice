@@ -22,8 +22,8 @@ bars:
       enabled: true
       duration: 400
     blur_effect:
-      enabled: true
-      acrylic: false
+      enabled: false
+      acrylic: true
       dark_mode: true
       round_corners: true
       round_corners_type: "normal"
@@ -33,7 +33,7 @@ bars:
       windows_app_bar: true
     dimensions:
       width: "100%"
-      height: 32
+      height: 36
     padding:
       top: 2
       left: 4
@@ -41,23 +41,60 @@ bars:
       right: 4
     widgets:
       left:
-      - "home"
-      - "komorebi_workspaces"
-      - "active_window"
+      - "left-grouper"
       center:
-      - "volume"
-      - "clock"
-      - "weather"
+      - "center-grouper"
       right:
-      - "cava"
-      - "media"
-      - "wallpapers"
-      - "bin"      
-      - "brightness"
-      - "language"
-      - "systray"
-      - "power_menu"
+      - "right-grouper"
 widgets:
+  left-grouper:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "left-grouper"
+      widgets: [
+        "home",
+        "komorebi_workspaces",
+        "active_window"
+      ]
+
+  center-grouper:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "center-grouper"
+      widgets: [
+        "volume",
+        "clock",
+        "weather"
+      ]
+
+  right-grouper:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "right-grouper"
+      widgets: [
+        "cava",
+        "media",
+        "wallpapers",
+        "bin",
+        "brightness",
+        "notifications",
+        "language",
+        "systray",
+        "power_menu"
+      ]
+
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "\uf476  {count}"
+      label_alt: "{count} notifications"
+      hide_empty: true
+      tooltip: false
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "do_nothing"
+        on_middle: "toggle_label"
+
   home:
     type: "yasb.home.HomeWidget"
     options:
@@ -128,7 +165,7 @@ widgets:
         offset_left: 0
         thumbnail_corner_radius: 4
         thumbnail_size: 150
-        max_title_size: 80
+        max_title_size: 20
         max_artist_size: 20
         show_source: false
       label_shadow:
@@ -269,56 +306,31 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
-  notifications:
-    type: "yasb.notifications.NotificationsWidget"
+  bluetooth:
+    type: "yasb.bluetooth.BluetoothWidget"
     options:
-      label: "\uf476 {count}"
-      label_alt: "{count} notifications"
-      hide_empty: false
-      tooltip: false
+      label: "<span>{icon}</span>"
+      label_alt: "{device_name}"
+      label_no_device: "No devices connected"
+      tooltip: true
+      max_length: 10
+      max_length_ellipsis: "..."
+      icons: 
+        bluetooth_on: "\udb80\udcaf"
+        bluetooth_off: "\udb80\udcb2"
+        bluetooth_connected: "\udb80\udcb1"
+      device_aliases:
+        - name: "T5.0"
+          alias: "\uf025"
       callbacks:
-        on_left: "toggle_notification"
-        on_right: "do_nothing"
-        on_middle: "toggle_label"
-  glazewm_tiling_direction:
-    type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
-    options:
-      horizontal_label: "\udb81\udce1"
-      vertical_label: "\udb81\udce2"
-      btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
-  glazewm_workspaces:
-    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
-    options:
-      offline_label: "GlazeWM Offline"
-      hide_empty_workspaces: true
-      hide_if_offline: false
-      monitor_exclusive: true
-      enable_scroll_switching: true
-      btn_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
-      app_icons: 
-        enabled_populated: false
-        enabled_active: false
-        size: 16
-        max_icons: 0
-        hide_label: false
-        hide_duplicates: false
-        hide_floating: false
-      animation: true
+        on_left: "toggle_label"
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
+      label: ""
       keybindings:
         - keys: "win+alt+c"
           action: "toggle_gallery"
-      label: "\udb83\ude09"
       # Example path to folder with images. Can be a single string or a list of strings.
       # image_path: "C:\\Users\\{Username}\\Images" 
       image_path: 
@@ -415,16 +427,16 @@ widgets:
         current_line_style: "dot"
         hourly_gradient:
           enabled: false
-          top_color: "#8EAEE8"
-          bottom_color: "#2A3E68"
+          top_color: "#1b4a38"
+          bottom_color: "#02070556"
         hourly_forecast_buttons: # Optional hourly forecast data type toggle buttons, default disabled
-          enabled: true # Set to false to hide the buttons
+          enabled: false # Set to false to hide the buttons
           default_view: "temperature" # Default view when opening the weather card. Options: "temperature", "rain", "snow"
           temperature_icon: "\udb81\udd99"
           rain_icon: "\udb81\udd96"
           snow_icon: "\udb81\udd98"
         weather_animation:
-          enabled: false
+          enabled: true
           snow_overrides_rain: true
           temp_line_animation_style: both # can be "rain", "snow", "both", or "none"
           rain_effect_intensity: 1.0 # 0.01 - 10.0
@@ -442,10 +454,10 @@ widgets:
       bar_height: 12
       min_bar_height: 0
       gradient: 1
-      foreground: "#9BDAC2"
-      gradient_color_1: '#9BDAC2'
-      gradient_color_2: '#9BDAC2'
-      gradient_color_3: '#9BDAC2'
+      foreground: "#89A3EA"
+      gradient_color_1: '#89A3EA'
+      gradient_color_2: '#89A3EA'
+      gradient_color_3: '#89A3EA'
       bars_number: 8
       bar_spacing: 2
       bar_width: 4
@@ -458,8 +470,8 @@ widgets:
       keybindings:
         - keys: "win+alt+x"
           action: "empty_bin"
-      label: "{icon}"
-      label_alt: "{icon} {items_size}"
+      label: "{icon} {items_size}"
+      label_alt: "{icon}"
       icons:
         bin_empty: "\udb82\ude7a"
         bin_filled: "\udb82\ude79"
@@ -571,10 +583,10 @@ widgets:
       auto_light_night_end_time: "06:45"
       auto_light_day_level: 75
       brightness_icons: [
-        "\udb80\udcde",  # Icon for 0-25% brightness
-        "\udb80\udcdd",  # Icon for 26-50% brightness
-        "\udb80\udcdf",  # Icon for 51-75% brightness
-        "\udb80\udce0"   # Icon for 76-100% brightness
+        "\udb80\udcde ",  # Icon for 0-25% brightness
+        "\udb80\udcdd ",  # Icon for 26-50% brightness
+        "\udb80\udcdf ",  # Icon for 51-75% brightness
+        "\udb80\udce0 "   # Icon for 76-100% brightness
       ]
       brightness_menu:
         blur: true
