@@ -89,7 +89,7 @@
   "controlStyles[28].styles[0]": "Visibility=Collapsed",
   "controlStyles[29].target": "Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
   "controlStyles[29].styles[0]": "Margin=3",
-  "styleConstants[0]": "crust=<WindhawkBlur BlurAmount=\"2\" TintColor=\"#23020705\"/>",
-  "styleConstants[1]": "accent=#9BDAC2",
+  "styleConstants[0]": "crust=<WindhawkBlur BlurAmount=\"2\" TintColor=\"#42010308\" />",
+  "styleConstants[1]": "accent=#89A3EA",
   "theme": "TranslucentStartMenu"
 }
