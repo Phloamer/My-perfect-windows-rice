@@ -1,11 +1,10 @@
 :root {
 
-    --crust: #02070559;
-    --base: #1b4a38ad;
-    --surface: #3FAE86;
-    --accent: #9BDAC2; 
-    --text: #F7FCFA;
-
+    --crust: #01030859;
+    --base: #0e2357d2;
+    --surface: #214FCB;
+    --accent: #89A3EA; 
+    --text: #F6F8FD;
 }
 
 * {
@@ -18,12 +17,36 @@
 .yasb-bar {
     padding: 0;
     margin: 0;
-    background-color: var(--crust);
+    background-color: transparent;
     border-radius: 8px;
 }
 
+.left-grouper .container {
+    background-color: var(--crust);
+    border: 2px solid var(--accent);
+    margin: 2px;
+    border-radius: 6px;
+    backdrop-filter: blur(25px);
+}
+
+.center-grouper .container {
+    background-color: var(--crust);
+    border: 2px solid var(--accent);
+    margin: 2px;
+    border-radius: 6px;
+    backdrop-filter: blur(25px);
+}
+
+.right-grouper .container {
+    background-color: var(--crust);
+    border: 2px solid var(--accent);
+    margin: 2px;
+    border-radius: 6px;
+    backdrop-filter: blur(25px);
+}
+
 .widget {
-    padding: 0 12px;
+    padding: 0;
     margin: 0;
 }
 
@@ -32,7 +55,7 @@
 }
 
 .widget .label {
-    padding: 0px 2px;
+    padding: 0px;
 }
 
 .apps-widget {
@@ -50,11 +73,15 @@
     color: var(--accent);
 }
 
+.active-window-widget .label{
+    margin: 0px 8px 0px 1px;
+}
+
 /* WIDGET CONTAINERS - These get colors from your script now */
 .apps-widget .widget-container,
 .komorebi-workspaces {
-    margin-left: 4cap;
-    margin-right: -4px;
+    margin-left: 6px;
+    margin-right: 8px;
     margin-top: 4px;
     margin-bottom: 4px;
 }
@@ -102,7 +129,24 @@
     color: var(--accent);
     font-weight: 600;
 }
-
+.notification-widget {
+    padding: 0 0px 0 4px;
+}
+.notification-widget .widget-container {
+	background-color: transparent;
+	margin: 6px 0 6px 0;
+	border-radius: 12px;
+    border: none;
+}
+.notification-widget .icon {
+    font-size: 12px;
+}
+.notification-widget .icon.new-notification {
+    color: var(--accent);
+}
+.notification-widget .label.new-notification {
+    color: var(--accent);
+}
 .power-menu-widget .label {
     /* CHANGED: Pink is usually brighter than Red in Pywal */
     color: var(--accent);
@@ -170,12 +214,10 @@
 
 .volume-widget .icon {
     color: var(--accent);
-    margin: 1px 2px 0 0;
 }
 
 .volume-widget .label {
     color: var(--accent);
-    margin: 1px 2px 0 0;
 }
 
 .github-widget .icon {
@@ -190,7 +232,7 @@
 .weather-widget,
 .github-widget,
 .volume-widget {
-    padding: 0 6px;
+    margin: 0 8px;
 }
 
 /* WIFI MENU */
@@ -355,13 +397,17 @@
     color: var(--accent);
 }
 
+.recycle-bin-widget{
+    margin: 0 8px;
+}
+
 .recycle-bin-widget .label {
     color: var(--accent);
 }
 
 .clock-widget .label {
-    /* Keeping this Teal as you requested */
     color: var(--accent);
+    margin: 0 8px;
 }
 
 .apps-widget .label {
@@ -387,117 +433,91 @@
     color: var(--accent);
 }
 
+.weather-widget{
+    margin: 0 8px;
+}
+
 .weather-widget .label {
     color: var(--accent);
 }
 
-/* WEATHER CARD */
+/* Weather card style */
 .weather-card {
-    background-color: var(--crust);
-    border: 1px solid var(--surface);
+    background-color: var(--crust); 
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 10px;
 }
-
 .weather-card-today {
-    border: 1px solid var(--surface);
-    border-radius: 8px;
-    background-color: var(--crust);
+    background-color: var(--crust); 
+    border: 2px solid var(--accent);
+    border-radius: 10px;
 }
-
 .weather-card-today .label {
     font-size: 12px;
-    color: var(--text);
 }
-
 .weather-card-today .label.location {
     font-size: 24px;
     font-weight: 700;
-    color: var(--accent);
 }
-
 .weather-card-today .label.alert {
     font-size: 12px;
     font-weight: 700;
-    background-color: var(--surface);
+    background-color: var(--crust);
     border: 1px solid var(--accent);
-    color: var(--accent);
+    color: var(--text);
     border-radius: 6px;
     padding: 5px 0;
 }
-
 .weather-card-day {
-    border: 1px solid var(--surface);
-    border-radius: 8px;
-    background-color: var(--crust);
+    background-color: var(--crust); 
+    border: 2px solid var(--accent);
+    border-radius: 10px;
 }
 
 .weather-card-day.active {
     background-color: var(--surface);
-    border: 1px solid var(--accent);
+    border: 2px solid var(--surface);
+}
+.weather-card-day.active:hover {
+    background-color: var(--accent);
+    border: 2px solid var(--accent);
 }
 
 .weather-card-day:hover {
-    background-color: var(--surface);
+    background-color: var(--base);
 }
 
 .weather-card-day .label {
     font-size: 12px;
-    color: var(--text);
 }
 
 .weather-card .hourly-container {
-    border: 1px solid var(--surface);
+    border: 1px solid var(--accent);
     background-color: var(--crust);
     border-radius: 8px;
     min-height: 150px;
 }
 
 .weather-card .hourly-data {
+    /* font-family: 'Segoe UI';*/
+    /* color: cyan;*/ /* <- Font color */
     font-size: 12px;
     font-weight: bold;
-    color: var(--text);
 }
 
 .weather-card .hourly-data.temperature {
-    background-color: var(--accent);
-}
-
-.weather-card .hourly-data.rain {
-    background-color: var(--accent);
-}
-
-.weather-card .hourly-data.snow {
-    background-color: var(--accent);
+    background-color: var(--accent); /* Temperature curve & line color */
 }
 
 .weather-card .hourly-data .hourly-rain-animation {
-    color: var(--accent);
-    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--base);
+    background-color: transparent;
 }
 
 .weather-card .hourly-data .hourly-snow-animation {
-    color: var(--text);
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.weather-card .hourly-data-buttons {
-    margin: 0px;
-}
-
-.weather-card .hourly-data-button {
-    border-radius: 4px;
-    min-height: 24px;
-    min-width: 24px;
-    max-width: 24px;
-    max-height: 24px;
-    font-size: 14px;
-    color: var(--overlay0);
-    border: 1px solid transparent;
-}
-
-.weather-card .hourly-data-button.active {
-    color: var(--text);
-    background-color: var(--surface);
-    border: 1px solid var(--surface);
+    color: var(--accent);
+    background-color: transparent;
 }
 
 .taskbar-widget {
@@ -534,12 +554,9 @@
     color: var(--text);
 }
 
-.wallpapers-widget .icon {
-    color: var(--accent);
-}
 
 .wallpapers-widget {
-    padding: 0 6px 0 6px;
+    margin: 0px;
     
 }
 
@@ -622,7 +639,7 @@
 }
 
 .home-widget{
-    margin-right: -10px;
+    margin: 0 8px;
 }
 .home-widget .icon {
     color: var(--accent) !important;
@@ -660,11 +677,10 @@
 /* MEDIA WIDGET */
 .media-widget {
     padding: 0;
-    padding-left: 2px;
-    margin: 0;
+    padding-left: 8px;
     border-radius: 2px;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     margin-right: 8px;
     background-color: var(--base);
 }
@@ -677,7 +693,7 @@
 .media-widget .btn {
     color: var(--text);
     padding: 0 3px;
-    margin: 4px 0;
+    margin: 0px 0;
     border-radius: 10px;
     font-family: Segoe Fluent Icons;
 }
@@ -691,6 +707,9 @@
     border-radius: 4px;
     font-size: 16px;
 }
+.media-widget .btn.play:hover {
+    color: var(--surface);
+}
 .media-widget .btn.disabled:hover,
 .media-widget .btn.disabled {
     color: var(--surface);
@@ -700,8 +719,7 @@
 
 .media-menu {
     width: 380px;
-
-    height: 212;
+    height: 212px;
     background-color: var(--crust);
     border: 2px solid var(--accent);
     border-radius: 10px;
@@ -875,8 +893,10 @@
 	margin:0 2px 0 0;
 }
 .audio-menu {
-    background-color:rgba(27, 17, 19, 0.4); 
-    min-width: 300px;
+    background-color: var(--crust); 
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 10px;
 }
 /* System volume */
 .audio-menu .system-volume-container .volume-slider {
@@ -884,7 +904,7 @@
 }
 /* Device list styles */
 .audio-menu .audio-container .device {
-    background-color:transparent;
+    background-color: transparent;
     border: none;
     padding:6px 8px 6px 4px;
     margin: 2px 0;
@@ -895,25 +915,11 @@
     background-color: var(--base);
    
 }
+.audio-menu .audio-container .device.selected:hover {
+    background-color: var(--surface);
+}
 .audio-menu .audio-container .device:hover {
     background-color: var(--base);
-}
-/* Toggle button for application volumes (if is enabled) */
-.audio-menu .toggle-apps {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    min-height: 24px;
-    min-width: 24px;
-    border-radius: 4px;
-}
-.audio-menu .toggle-apps.expanded {
-    background-color: var(--accent);
-}
-.audio-menu .toggle-apps:hover {
-    background-color: var(--accent);
-    
 }
 /* Container for application volumes (if is enabled) */
 .audio-menu .apps-container {
@@ -931,12 +937,11 @@
     margin-right: 8px;
 }
 .audio-menu .apps-container .app-volume .app-icon-container:hover {
-    background-color: var(--accent);
+    background-color: var(--base);
 }
 
 .language-widget {
-    margin-left: -6px;
-    margin-right: -6px;
+    margin: 0 8px;
 }
 
 .language-menu {
@@ -1000,12 +1005,17 @@
     font-weight: 600;
     font-size: 12px;
 }
+.cava-widget{
+    margin: 0 8px;
+}
+.power-menu-widget {
+    margin: 0 8px;
+}
 
 .systray {
     background: transparent;
     border: none;
-    margin-left: -10px;
-    margin-right: -10px;
+    margin: 0 8px;
 }
 .systray .unpinned-container {
     background: transparent;
@@ -1070,8 +1080,7 @@
     background-color: var(--base);
 }
 .brightness-widget {
-    margin-left: -10px;
-    margin-right: -10px;
+    margin: 0  6px;
 }
 .brightness-menu {
     background-color: var(--crust); 
