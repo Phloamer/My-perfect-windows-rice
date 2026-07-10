@@ -63,6 +63,6 @@
   "controlStyles[20].styles[2]": "BorderBrush=$accent",
   "controlStyles[8].styles[4]": "BorderThickness=2",
   "controlStyles[8].styles[5]": "BorderBrush=$accent",
-  "styleConstants[0]": "crust=<WindhawkBlur BlurAmount=\"4\" TintColor=\"#59020705\"/>",
-  "styleConstants[1]": "accent=#9BDAC2"
+  "styleConstants[0]": "crust=<WindhawkBlur BlurAmount=\"2\" TintColor=\"#42010308\" />",
+  "styleConstants[1]": "accent=#89A3EA"
 }

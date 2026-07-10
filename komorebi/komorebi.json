@@ -1,5 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.40/schema.json",
+  "default_layout": "bsp",
+  "window_rule_exceptions": [],
+  "enable_pause_command": true,
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
@@ -11,11 +14,11 @@
   "border_width": 3,
   "border_offset": 0,
   "border_colours": {
-    "single": "#9BDAC2",
-    "stack": "#9BDAC2",
-    "floating": "#9BDAC2",
-    "monocle": "#9BDAC2",
-    "unfocused": "#1b4a38"
+    "single": "#89A3EA",
+    "stack": "#89A3EA",
+    "floating": "#89A3EA",
+    "monocle": "#89A3EA",
+    "unfocused": "#0E2357"
   },
   "mouse_follows_focus": true,
   "transparency": true,
@@ -37,31 +40,5 @@
       "width": 200,
       "font_size": 16
     }
-  },
-  "monitors": [
-    {
-      "workspaces": [
-        {
-          "name": "I",
-          "layout": "RightMainVerticalStack"
-        },
-        {
-          "name": "II",
-          "layout": "RightMainVerticalStack"
-        },
-        {
-          "name": "III",
-          "layout": "RightMainVerticalStack"
-        },
-        {
-          "name": "IV",
-          "layout": "RightMainVerticalStack"
-        },
-        {
-          "name": "V",
-          "layout": "RightMainVerticalStack"
-        }
-      ]
-    }
-  ]
+  }
 }
